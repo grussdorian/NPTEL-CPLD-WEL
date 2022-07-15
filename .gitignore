@@ -1,0 +1,10 @@
+output_files
+db
+incremental_db
+simulation
+*.svf
+*.qsf
+*.qws
+*.rpt
+*.qpf
+*.zip

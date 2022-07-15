@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity decoder is 
+	port (Input: in std_logic_vector(3 downto 0);
+			Y : out std_logic_vector(7 downto 0)); 
+end entity;
+			
+architecture beh of decoder is
+begin
+
+process(S2, S1, In4, In3, In2, In1)
+begin
+	if (S2 = '1') and (S1 = '1') then
+	Y <= In4;
+	elsif (S2 = '1') and (S1 = '0') then
+	Y <= In3;
+	elsif (S2 = '0') and (S1 = '1') then
+	Y <= In2;
+	else
+	Y <= In1;
+	end if;
+end process;
+
+end beh;

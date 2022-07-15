@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity scrabble is 
+	port (In3, In2, In1, In0: in std_logic_vector(3 downto 0); S1, S0: in std_logic;
+			Y : out std_logic_vector(3 downto 0)); 
+end entity;
+			
+architecture beh of scrabble is
+begin
+
+process(S1, S0, In3, In2, In1, In0)
+begin
+	if ((S3 = '0') and (S2 = '0') and (S1 = '0') and (S0 = '1')) or
+	((S3 = '0') and (S2 = '0') and (S1 = '1') and (S0 = '0')) or
+	((S3 = '1') and (S2 = '1') and (S1 = '0') and (S0 = '1')) or
+	((S3 = '1') and (S2 = '1') and (S1 = '1') and (S0 = '0'))
+	
+	then	Y <= '1';
+	
+	else
+	Y <= In1;
+	
+	end if;
+end process;
+
+--Y <= (In4 and S2 and S1) or (In3 and S2 and not S1) or (In2 and not S2 and S1) or (In1 and not S2 and not S1);
+--Error Input is 4bits and Select lines are 1 bit	
+end beh;

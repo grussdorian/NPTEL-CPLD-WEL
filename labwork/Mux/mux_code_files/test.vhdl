@@ -1,0 +1,97 @@
+---- XOR, OR, AND gates using NAND gates
+--
+--library ieee;
+--use ieee.std_logic_1164.all;
+--
+--
+--package GatesNew is
+--
+--  component XOR_GATE_2 is
+--   port (A,B: in std_logic; s_out: out std_logic);
+--  end component XOR_GATE_2;
+--
+--  component AND_GATE_2 is
+--   port (A, B: in std_logic; s_out: out std_logic);
+--  end component AND_GATE_2;
+--  
+--  component OR_GATE_2 is
+--	port (A,B: in std_logic; s_out: out std_logic);
+--  end component OR_GATE_2;
+--
+--end package GatesNew;  
+--  
+--
+--
+--
+--library ieee;
+--use ieee.std_logic_1164.all;
+--
+--library work;
+--use work.Gates.all;
+--
+--entity XOR_GATE_2 is
+--	port (A, B: in std_logic; s_out: out std_logic);
+--end entity XOR_GATE_2;
+--
+--
+--library ieee;
+--use ieee.std_logic_1164.all;
+--
+--library work;
+--use work.Gates.all;
+--
+--entity OR_GATE_2 is
+--	port (A, B: in std_logic; s_out: out std_logic);
+--end entity OR_GATE_2;
+--
+--
+--library ieee;
+--use ieee.std_logic_1164.all;
+--library work;
+--use work.Gates.all;
+--
+--entity AND_GATE_2 is
+--	port (A, B: in std_logic; s_out: out std_logic);
+--end entity AND_GATE_2;
+--
+--
+--architecture Struct of XOR_GATE_2 is
+--  signal s1, s2, s3: std_logic;
+--begin
+--  -- component instances
+--  n1: NAND_2 
+--		 port map (A => A, B => B, Y => s1);
+--  n2: NAND_2 
+--       port map (A => A, B => s1, Y => s2);
+--
+--  n3: NAND_2 
+--       port map (A => s1, B => B, Y => s3);
+--
+--  n4: NAND_2 
+--       port map (A => s2, B => s3, Y => s_out);
+--
+--end Struct;
+--
+--
+--architecture Struct of AND_GATE_2 is
+--  signal s1: std_logic;
+--begin
+--  -- component instances
+--  n5: NAND_2 
+--		 port map (A => A, B => B, Y => s1);
+--  n6: NAND_2 
+--       port map (A => s1, B => s1, Y => s_out);
+--end Struct;
+--
+--
+--architecture Struct of OR_GATE_2 is
+--  signal s1,s2: std_logic;
+--begin
+--  -- component instances
+--  n7: NAND_2 
+--		 port map (A => A, B => A, Y => s1);
+--  n8: NAND_2 
+--       port map (A => B, B => B, Y => s2);
+--  n9: NAND_2
+--		 port map (A => s1, B => s2, Y => s_out);
+--end Struct;

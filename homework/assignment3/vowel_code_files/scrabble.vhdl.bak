@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+
+package Scrabble is
+  component scrabble is
+   port (X3,X2,X1,X0: in std_logic; Y: out std_logic);
+  end component scrabble;
+  
+end package Scrabble;
+
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+entity scrabble is
+	port (I0, I1, S0: in std_logic; S_out: out std_logic);
+end entity scrabble;
+
+architecture Struct of scrabble is
+  signal t1,t2: std_logic;
+begin
+  -- component instances
+	t1 <= I0 and (not S0);
+	t2 <= I1 and s0;
+	S_out <= t1 or t2;
+end Struct;

@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+use work.Gates.all;
+
+package Multiplier
+
+	component multiplier is
+		port (A3,A2,A1,A0, B2,B1,B0: in std_logic; M6,M5,M4,M3,M2,M1,M0: out std_logic);
+	end component multiplier;
+
+end package Multiplier;
